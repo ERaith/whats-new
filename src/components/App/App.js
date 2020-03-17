@@ -14,7 +14,7 @@ class App extends Component {
   render () {
     return (
       <section className="app">
-      <NewsContainer articles = {this.state.local}/>
+        <NewsContainer articles = {this.state.local}/>
       </section>
     );
   }
