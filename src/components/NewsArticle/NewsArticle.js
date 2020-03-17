@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import './NewsArticle.css';
+import React, { Component } from "react";
+import "./NewsArticle.css";
 
 class NewsArticle extends Component {
   render() {
+    const { id, headline, description, img, url } = this.props.article;
 
-    const {id,headline,description,img,url} = this.props.article;
-
-    return(
+    return (
       <React.Fragment>
-        <img src = { img } />
-        <h2> { headline } </h2>
-        <p> { description } </p>
-        <a href = { url }>Link To Article </a>
+        <img src={img} />
+        <h2> {headline} </h2>
+        <p> {description} </p>
+        <a href={url}>Link To Article </a>
       </React.Fragment>
-    )
-
+    );
   }
 }
 
