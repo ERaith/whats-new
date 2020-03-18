@@ -24,7 +24,7 @@ class Menu extends Component {
 
   isActive = navName => {
     if (navName === this.state.active) {
-      return "nav-active";
+      return "nav nav-active";
     } else {
       return "nav";
     }

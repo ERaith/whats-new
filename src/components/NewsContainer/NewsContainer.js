@@ -5,7 +5,7 @@ import NewsArticle from "../NewsArticle/NewsArticle.js";
 class NewsContainer extends Component {
   render() {
     return (
-      <article>
+      <React.Fragment>
         {this.props.articles.map(article => (
           <NewsArticle
             key={article.id}
@@ -16,7 +16,7 @@ class NewsContainer extends Component {
             articleUrl={article.url}
           />
         ))}
-      </article>
+      </React.Fragment>
     );
   }
 }

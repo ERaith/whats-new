@@ -7,6 +7,7 @@ import technology from "../../data/technology";
 import "./App.css";
 import NewsContainer from "../NewsContainer/NewsContainer.js";
 import Menu from "../Menu/Menu.js";
+import SearchForm from "../SearchForm/SearchForm.js"
 
 class App extends Component {
   constructor() {
@@ -27,7 +28,10 @@ class App extends Component {
   render() {
     return (
       <>
-        <Menu filterNews={this.filterNews} />
+        <nav class = "nav-wrapper">
+          <Menu filterNews={this.filterNews} />
+        </nav>
+        <SearchForm/>
         <section className="app">
           <NewsContainer articles={this.state[this.state.active]} />{" "}
         </section>
