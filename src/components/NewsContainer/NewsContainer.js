@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./NewsContainer.css";
 import NewsArticle from "../NewsArticle/NewsArticle.js";
+import PropTypes from 'prop-types';
 
 class NewsContainer extends Component {
   render() {
@@ -19,6 +20,10 @@ class NewsContainer extends Component {
       </React.Fragment>
     );
   }
+}
+
+NewsContainer.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default NewsContainer;

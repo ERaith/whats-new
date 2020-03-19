@@ -4,6 +4,8 @@ import NewsContainer from "../NewsContainer/NewsContainer.js";
 import Menu from "../Menu/Menu.js";
 import SearchForm from "../SearchForm/SearchForm.js";
 const NEWS_URL = "https://whats-new-api.herokuapp.com/api/v1/news";
+
+
 class App extends Component {
   constructor() {
     super();
@@ -12,6 +14,10 @@ class App extends Component {
       articles: [],
       data: null
     };
+  }
+
+  updateState = (data) => {
+    this.setState({ data: data, articles: data[this.state.category] });
   }
 
   filterNews = filterKey => {
@@ -32,13 +38,13 @@ class App extends Component {
   async componentDidMount() {
     let response = await fetch(NEWS_URL);
     let data = await response.json();
-    this.setState({ data: data, articles: data[this.state.category] });
+    this.updateState(data);
   }
 
   render() {
     return (
       <>
-        <menu class="menu-wrapper">
+        <menu className="menu-wrapper">
           <nav>
             <Menu filterNews={this.filterNews} search={this.search} />
           </nav>
