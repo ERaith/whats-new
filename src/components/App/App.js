@@ -18,22 +18,33 @@ class App extends Component {
       entertainment,
       science,
       technology,
-      active: "local"
+      active: "local",
+      data: local
     };
   }
   filterNews = filterKey => {
-    this.setState({ active: filterKey });
+    this.setState({ active: filterKey, data:this.state[filterKey] });
   };
+
+  search = (sort) => {
+    console.log(sort)
+    let updatedArticles = this.state[this.state.active];
+    updatedArticles = updatedArticles.filter(article => {
+      return article.headline.includes(sort)
+    })
+    this.setState({data:updatedArticles})
+
+  }
 
   render() {
     return (
       <>
         <nav class = "nav-wrapper">
-          <Menu filterNews={this.filterNews} />
+          <SearchForm search = {this.search}/>
+          <Menu filterNews={this.filterNews} search = {this.search}/>
         </nav>
-
         <section className="app">
-          <NewsContainer articles={this.state[this.state.active]} />{" "}
+          <NewsContainer articles={this.state.data} />{" "}
         </section>
       </>
     );

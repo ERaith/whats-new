@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Menu.css";
-import SearchForm from "../SearchForm/SearchForm.js";
 
 // MENU COMPONENT CODE GOES HERE
 class Menu extends Component {
@@ -8,7 +7,7 @@ class Menu extends Component {
     super();
     this.state = {
       active: "local",
-      navNames: ["local", "health", "science", "technology", "entertainment"]
+      navNames: ["local", "health", "science", "technology", "entertainment"],
     };
   }
 
@@ -34,7 +33,6 @@ class Menu extends Component {
   render() {
     return (
       <React.Fragment>
-              <SearchForm/>
         {this.state.navNames.map(navName => (
           <a
             class={this.isActive(navName)}
