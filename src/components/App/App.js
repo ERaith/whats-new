@@ -30,7 +30,7 @@ class App extends Component {
   search = sort => {
     let updatedArticles = this.state.data[this.state.category];
     updatedArticles = updatedArticles.filter(article => {
-      return article.headline.includes(sort);
+      return article.headline.toLowerCase().includes(sort.toLowerCase());
     });
     this.setState({ articles: updatedArticles });
   };
