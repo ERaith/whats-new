@@ -7,6 +7,7 @@ class Menu extends Component {
     super();
     this.state = {
       active: "local",
+      isSidebarOpen:false,
       navNames: ["local", "health", "science", "technology", "entertainment"],
     };
   }
@@ -28,10 +29,21 @@ class Menu extends Component {
       return "nav";
     }
   };
-
+  handleMenuButtonClick = () => {
+    this.setState({isSidebarOpen:!this.state.isSidebarOpen})
+  }
   render() {
+    console.warn(this.state.isSidebarOpen)
+    const { isSidebarOpen} = this.state;
     return (
       <React.Fragment>
+        <button
+          className = "menu-button"
+          onClick = {this.handleMenuButtonClick}
+        >
+        Collapse Menu
+      </button>
+      <div className = {`menu ${isSidebarOpen ? 'show' : 'hide'}`}>
         {this.state.navNames.map(navName => (
           <a
             class={this.isActive(navName)}
@@ -41,6 +53,7 @@ class Menu extends Component {
             {navName}
           </a>
         ))}
+        </div>
       </React.Fragment>
     );
   }
