@@ -16,3 +16,23 @@
   color: tomato;
   background-color: purple;
 }
+.menu-button{
+  width:11rem;
+}
+
+.menu {
+  width: 11rem;
+  box-shadow: 1px 1px #888;
+  position:absolute;
+  top:3rem;
+  z-index: 999;
+  background-color: #fff;
+  left:-22vw;
+  display: flex;
+  flex-direction: column;
+  transition: left .3s ease-in;
+}
+
+.menu.show {
+  left:0;
+}
