@@ -16,6 +16,10 @@ class App extends Component {
     };
   }
 
+  updateState = (data) => {
+    this.setState({ data: data, articles: data[this.state.category] });
+  }
+
   filterNews = filterKey => {
     this.setState({
       category: filterKey,
@@ -34,7 +38,7 @@ class App extends Component {
   async componentDidMount() {
     let response = await fetch(NEWS_URL);
     let data = await response.json();
-    this.setState({ data: data, articles: data[this.state.category] });
+    this.updateState(data);
   }
 
   render() {

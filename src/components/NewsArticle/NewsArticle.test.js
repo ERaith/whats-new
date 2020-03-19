@@ -12,6 +12,7 @@ describe("Article", () => {
       img:"img URL",
       url:"Article Link URL"
     }
+    
     const { debug, getByPlaceholderText, getByText, getByRole,getByLabelText } = render(
       <NewsArticle
         article = {article}
