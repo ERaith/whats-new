@@ -12,7 +12,6 @@ class Menu extends Component {
   }
 
   updateState = event => {
-    console.log(event.target.name);
     const filterKey = event.target.name;
     this.setState({ active: filterKey });
     this.filter(filterKey);

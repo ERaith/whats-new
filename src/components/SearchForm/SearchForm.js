@@ -20,11 +20,11 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <label for="search">Search</label>
+      <div class = "search-form">
+        <label for="search"></label>
         <input id="search" onChange={event => this.updateState(event)} />
         <button onClick = {event => this.searchSubmit(event)}>Search</button>
-      </React.Fragment>
+      </div>
     );
   }
 }

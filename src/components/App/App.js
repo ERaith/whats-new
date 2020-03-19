@@ -27,7 +27,6 @@ class App extends Component {
   };
 
   search = (sort) => {
-    console.log(sort)
     let updatedArticles = this.state[this.state.active];
     updatedArticles = updatedArticles.filter(article => {
       return article.headline.includes(sort)
@@ -39,10 +38,12 @@ class App extends Component {
   render() {
     return (
       <>
-        <nav class = "nav-wrapper">
-          <SearchForm search = {this.search}/>
+        <menu class = "menu-wrapper">
+        <nav>
           <Menu filterNews={this.filterNews} search = {this.search}/>
         </nav>
+        <SearchForm search = {this.search}/>
+        </menu>
         <section className="app">
           <NewsContainer articles={this.state.data} />{" "}
         </section>

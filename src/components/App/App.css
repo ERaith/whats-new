@@ -16,10 +16,11 @@
   align-content: flex-start;
 }
 
-.nav-wrapper {
+.menu-wrapper {
   background-color: grey;
   padding-left: 2rem;
-  height: 3rem;
-  display: flex;
+  height: 4rem;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
