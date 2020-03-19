@@ -9,12 +9,14 @@ class NewsArticle extends Component {
     return (
       <article>
         <div className="img-container">
-          <img src={img} aria-label= "article-image" />
+          <img src={img} aria-label={`article-image-${id}`} />
         </div>
-        <h2 aria-label= "headline"> {headline} </h2>
-        <p aria-label= "description"> {description} </p>
+        <h2 aria-label="headline"> {headline} </h2>
+        <p aria-label="description"> {description} </p>
         <div className="link-container">
-          <a aria-label= "article-link" href={url}>Link To Article </a>
+          <a aria-label="article-link" href={url}>
+            Link To Article{" "}
+          </a>
         </div>
       </article>
     );

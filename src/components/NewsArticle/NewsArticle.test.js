@@ -22,7 +22,7 @@ describe("Article", () => {
     expect(getByLabelText("headline")).toBeInTheDocument();
     expect(getByLabelText("description")).toBeInTheDocument();
     expect(getByLabelText("article-link")).toBeInTheDocument();
-    expect(getByLabelText("article-image")).toBeInTheDocument();
+    expect(getByLabelText("article-image-1")).toBeInTheDocument();
   });
 
 });
