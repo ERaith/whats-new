@@ -23,3 +23,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+h1 {
+  color:purple;
+}
+
+span {
+  color:yellow;
+}

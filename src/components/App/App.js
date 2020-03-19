@@ -48,6 +48,7 @@ class App extends Component {
           <nav>
             <Menu filterNews={this.filterNews} search={this.search} />
           </nav>
+          <h1>What's <span>News</span></h1>
           <SearchForm search={this.search} />
         </menu>
         <section className="app">
