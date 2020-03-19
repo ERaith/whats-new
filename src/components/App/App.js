@@ -4,6 +4,8 @@ import NewsContainer from "../NewsContainer/NewsContainer.js";
 import Menu from "../Menu/Menu.js";
 import SearchForm from "../SearchForm/SearchForm.js";
 const NEWS_URL = "https://whats-new-api.herokuapp.com/api/v1/news";
+
+
 class App extends Component {
   constructor() {
     super();
@@ -38,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <menu class="menu-wrapper">
+        <menu className="menu-wrapper">
           <nav>
             <Menu filterNews={this.filterNews} search={this.search} />
           </nav>

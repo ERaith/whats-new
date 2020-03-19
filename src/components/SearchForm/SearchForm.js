@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchForm.css";
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
   constructor() {
@@ -20,13 +21,17 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div class = "search-form">
-        <label for="search"></label>
+      <div className = "search-form">
+        <label htmlFor="search"></label>
         <input id="search" onChange={event => this.updateState(event)} />
         <button onClick = {event => this.searchSubmit(event)}>Search</button>
       </div>
     );
   }
+}
+
+SearchForm.propTypes = {
+  search: PropTypes.func
 }
 
 export default SearchForm;

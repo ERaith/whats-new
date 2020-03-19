@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Menu.css";
+import PropTypes from 'prop-types';
 
 // MENU COMPONENT CODE GOES HERE
 class Menu extends Component {
@@ -46,9 +47,10 @@ class Menu extends Component {
       <div className = {`menu ${isSidebarOpen ? 'show' : 'hide'}`}>
         {this.state.navNames.map(navName => (
           <a
-            class={this.isActive(navName)}
+            className={this.isActive(navName)}
             name={navName}
             onClick={event => this.updateState(event)}
+            key = {navName}
           >
             {navName}
           </a>
@@ -57,6 +59,10 @@ class Menu extends Component {
       </React.Fragment>
     );
   }
+}
+
+Menu.propTypes = {
+  filterNews: PropTypes.func
 }
 
 export default Menu;
