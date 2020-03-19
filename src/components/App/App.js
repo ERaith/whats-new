@@ -1,51 +1,51 @@
 import React, { Component } from "react";
-import local from "../../data/local";
-import health from "../../data/health";
-import entertainment from "../../data/entertainment";
-import science from "../../data/science";
-import technology from "../../data/technology";
 import "./App.css";
 import NewsContainer from "../NewsContainer/NewsContainer.js";
 import Menu from "../Menu/Menu.js";
 import SearchForm from "../SearchForm/SearchForm.js";
-
+const NEWS_URL = "https://whats-new-api.herokuapp.com/api/v1/news";
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      local,
-      health,
-      entertainment,
-      science,
-      technology,
-      active: "local",
-      data: local
+      category: "local",
+      articles: [],
+      data: null
     };
   }
+
   filterNews = filterKey => {
-    this.setState({ active: filterKey, data:this.state[filterKey] });
+    this.setState({
+      category: filterKey,
+      articles: this.state.data[filterKey]
+    });
   };
 
-  search = (sort) => {
-    let updatedArticles = this.state[this.state.active];
+  search = sort => {
+    let updatedArticles = this.state.data[this.state.category];
     updatedArticles = updatedArticles.filter(article => {
-      return article.headline.includes(sort)
-    })
-    this.setState({data:updatedArticles})
+      return article.headline.includes(sort);
+    });
+    this.setState({ articles: updatedArticles });
+  };
 
+  async componentDidMount() {
+    let response = await fetch(NEWS_URL);
+    let data = await response.json();
+    this.setState({ data: data, articles: data[this.state.category] });
   }
 
   render() {
     return (
       <>
-        <menu class = "menu-wrapper">
-        <nav>
-          <Menu filterNews={this.filterNews} search = {this.search}/>
-        </nav>
-        <SearchForm search = {this.search}/>
+        <menu class="menu-wrapper">
+          <nav>
+            <Menu filterNews={this.filterNews} search={this.search} />
+          </nav>
+          <SearchForm search={this.search} />
         </menu>
         <section className="app">
-          <NewsContainer articles={this.state.data} />{" "}
+          <NewsContainer articles={this.state.articles} />
         </section>
       </>
     );
