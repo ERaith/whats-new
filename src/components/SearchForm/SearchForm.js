@@ -23,8 +23,16 @@ class SearchForm extends Component {
     return (
       <div className = "search-form">
         <label htmlFor="search"></label>
-        <input id="search" onChange={event => this.updateState(event)} />
-        <button onClick = {event => this.searchSubmit(event)}>Search</button>
+        <input
+          id="search"
+          onChange={event => this.updateState(event)}
+          placeholder = "search-input"
+        />
+        <button
+          onClick = {event => this.searchSubmit(event)}
+        >
+        Search
+        </button>
       </div>
     );
   }
