@@ -6,12 +6,16 @@ class NewsArticle extends Component {
     const { id, headline, description, img, url } = this.props.article;
 
     return (
-      <React.Fragment>
+      <article>
+      <div class = 'img-container'>
         <img src={img} />
+        </div>
         <h2> {headline} </h2>
         <p> {description} </p>
+        <div class = 'link-container'>
         <a href={url}>Link To Article </a>
-      </React.Fragment>
+        </div>
+      </article>
     );
   }
 }

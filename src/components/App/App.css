@@ -10,4 +10,17 @@
   height: 100vh;
   text-align: center;
   width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.menu-wrapper {
+  background-color: grey;
+  padding-left: 2rem;
+  height: 4rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }

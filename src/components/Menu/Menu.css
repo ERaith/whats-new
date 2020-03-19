@@ -1,0 +1,18 @@
+.nav {
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-left:.5rem;
+  padding-right:.5rem;
+  cursor: crosshair;
+}
+
+.nav-active {
+  color: tomato;
+  background-color: black;
+}
+
+.nav:hover{
+  color: tomato;
+  background-color: purple;
+}
